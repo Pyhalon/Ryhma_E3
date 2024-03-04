@@ -1,0 +1,19 @@
+.header{
+    height: 100px;
+    background-color: rgb(33, 33, 33);
+    flex-direction: row;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    margin-top: -120px;
+    border-radius: 2px;
+    color: rgb(201, 201, 201);
+    
+}
+.name{
+    font-family: anta ;
+    font-size: 40px;
+    color: white;
+    padding-top: 23px;
+    padding-left: 140px;
+}

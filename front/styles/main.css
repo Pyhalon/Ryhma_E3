@@ -1,0 +1,39 @@
+
+body, html{
+    height: 100%;
+}
+.background-image{
+   margin-top: 140px;
+   background-image: url("../picture/background3.jpg");
+   height: 100%;
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 10px;
+   border-radius: 3px;
+   
+   
+}
+.image{
+    width: 100%;
+    border-radius: 2px;
+    
+}
+.main-site{
+    
+    display: flex;
+    height: 800px;
+    margin-left: 200px;
+    margin-right: 200px;
+    opacity: 0.9;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.otsikko{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    font-size: 15px;
+    font-family: roboto;
+    background-color: greenyellow;
+}
