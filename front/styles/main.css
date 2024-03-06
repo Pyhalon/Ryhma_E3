@@ -19,8 +19,6 @@ body, html{
     
 }
 .main-site{
-    
-    display: flex;
     height: 800px;
     margin-left: 200px;
     margin-right: 200px;
@@ -29,11 +27,14 @@ body, html{
     border-radius: 3px;
 }
 
-.otsikko{
-    width: 100%;
+.teksti{
+   font-family: roboto;
+   font-size: 15px;
+    padding: 30px;
+
+}
+
+#otsikko{
     height: 100px;
-    text-align: center;
-    font-size: 15px;
-    font-family: roboto;
-    background-color: greenyellow;
+    font-size: 20px;
 }
