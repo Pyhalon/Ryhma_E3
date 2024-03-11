@@ -1,1 +1,10 @@
 
+
+.footer{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    color: white;
+    height: 100px;
+}

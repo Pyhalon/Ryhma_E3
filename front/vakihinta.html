@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+        <title>Vertaile kodinkoneiden sähkönkulutuksen hintoja helposti</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel = "stylesheet" href="styles/header.css">
+        <link rel = "stylesheet" href="styles/main.css">
+        <link rel = "stylesheet" href="styles/footer.css">
+        
+
+    </head> 
+
+    <body style="background-color: rgb(225, 225, 225);">
+        <div class = "header">
+            <div class="name">Nimikyltti</div>
+            
+        </div>
+
+            <div class ="background-image">
+                
+                <div class =" main-site">
+                    <div id = "otsikko" class = "teksti"> vetävä otskko</div>
+
+                    <div id = "vakihinta" class = "teksti">Syötä laskuriin haluamasi sähkönhinta: </div>
+
+                    <div id = "kone" class = "teksti"> Valitse kodinkone: </div>
+
+                    <div id="kodinkonevalitsija">
+
+                        <select id ="vetovalikko">
+                            <option value = "0">Valitse kodinkone</option>
+                            <option value = "1">Hiustenkuivain</option>
+                            <option value = "2">Astianpesukone</option>
+                            <option value = "3">Pyykinpesukone</option>
+                            <option value = "4">Mikroaaltouuni</option>
+                            <option value = "5">Televisio</option>
+                            <option value = "6">Uuni</option>
+                        </select>
+                    </div>
+
+                    <div id = "tunnit" class = "teksti">Kodinkoneen käyttötunnit:</div>
+                        <input type ="number" id = "käyttötunnit" placeholder="Syötä käyttötunnit">
+
+                    <div id = "minuutit" class = "teksti"> Kodinkoneen käyttöminuutit:</div>
+                        <input type ="number" id = "käyttöminuutit" placeholder="Syötä minuutit">
+
+                    <div>
+                        <button class="laske">Laske</button>
+                    </div>
+                </div>
+                
+                    
+
+        </div>
+        <div class ="footer"> Footer</div>
+        
+    </body>

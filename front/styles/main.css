@@ -19,7 +19,7 @@ body, html{
     
 }
 .main-site{
-    height: 800px;
+    height: 780px;
     margin-left: 200px;
     margin-right: 200px;
     opacity: 0.9;
@@ -37,4 +37,24 @@ body, html{
 #otsikko{
     height: 100px;
     font-size: 20px;
+}
+
+#vetovalikko, #käyttötunnit, #käyttöminuutit{
+    margin-left: 28px;
+    font-family: roboto;
+}
+#pörssisähkö, #kiinteäsähkö
+{
+    margin-left: 30px;
+    font-family: roboto;
+}
+.laske{
+    margin-top: 10px;
+    margin-left: 28px;
+}
+.laske:hover{
+ cursor: pointer;
+}
+.laske:active{
+    opacity: 0.9;
 }
