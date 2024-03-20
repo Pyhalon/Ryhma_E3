@@ -1,4 +1,5 @@
 .header{
+    display: flex;
     height: 100px;
     background-color: rgb(33, 33, 33);
     flex-direction: row;
@@ -16,4 +17,10 @@
     color: white;
     padding-top: 23px;
     padding-left: 140px;
+}
+.linkki{
+    margin-left: 350px;
+    margin-top: 40px;
+    font-family: roboto;
+    font-size: 20px;
 }
