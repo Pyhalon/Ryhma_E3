@@ -29,32 +29,46 @@
             <div class ="background-image">
                 
                 <div class =" main-site">
-                    <div id = "otsikko" class = "teksti"> vetävä otskko</div>
+                    <div id = "otsikko" class = "teksti"> Tällä sivustolla voit laskea haluamasi kodinkoneen kulutuksen ajakohtaisella pörssisähkönhinnalla.</div>
+                    <div id = "laskuri" style="
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;">
+                        <div id ="vasen" style="text-align: center;">
+                            <div id = "kone" class = "teksti"> Valitse kodinkone: </div>
 
-                    <div id = "kone" class = "teksti"> Valitse kodinkone: </div>
+                            <div id="kodinkonevalitsija">
 
-                    <div id="kodinkonevalitsija">
+                                <select id ="vetovalikko">
+                                    <option value = "0">Valitse kodinkone</option>
+                                    <option value = "1">Hiustenkuivain</option>
+                                    <option value = "2">Astianpesukone</option>
+                                    <option value = "3">Pyykinpesukone</option>
+                                    <option value = "4">Mikroaaltouuni</option>
+                                    <option value = "5">Televisio</option>
+                                    <option value = "6">Uuni</option>
+                                </select>
+                            </div>
 
-                        <select id ="vetovalikko">
-                            <option value = "0">Valitse kodinkone</option>
-                            <option value = "1">Hiustenkuivain</option>
-                            <option value = "2">Astianpesukone</option>
-                            <option value = "3">Pyykinpesukone</option>
-                            <option value = "4">Mikroaaltouuni</option>
-                            <option value = "5">Televisio</option>
-                            <option value = "6">Uuni</option>
-                        </select>
+                            <div id = "tunnit" class = "teksti">Kodinkoneen käyttötunnit:</div>
+                                <input type ="number" id = "käyttötunnit" placeholder="Syötä käyttötunnit">
+
+                            <div id = "minuutit" class = "teksti"> Kodinkoneen käyttöminuutit:</div>
+                                <input type ="number" id = "käyttöminuutit" placeholder="Syötä minuutit">
+
+                            <div>
+                                <button class="laske">Laske</button>
+                            </div>
+                        </div>
+                        <div id="oikea">
+                            <div id ="laskettu" class="teksti">Valitsemasi kodikoneen käyttö maksaisi: </div>
+                            <div id = "tulos" class = "teksti">9,90€
+                                
+                            </div>
+                            
+                        </div>
                     </div>
-
-                    <div id = "tunnit" class = "teksti">Kodinkoneen käyttötunnit:</div>
-                        <input type ="number" id = "käyttötunnit" placeholder="Syötä käyttötunnit">
-
-                    <div id = "minuutit" class = "teksti"> Kodinkoneen käyttöminuutit:</div>
-                        <input type ="number" id = "käyttöminuutit" placeholder="Syötä minuutit">
-
-                    <div>
-                        <button class="laske">Laske</button>
                     </div>
+                        
                 </div>
                 
                     

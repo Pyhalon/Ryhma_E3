@@ -37,19 +37,20 @@ body, html{
 #otsikko{
     height: 100px;
     font-size: 20px;
+    text-align: center;
 }
 
 #vetovalikko, #käyttötunnit, #käyttöminuutit{
-    margin-left: 28px;
+    
     font-family: roboto;
 }
 #pörssisähkö, #kiinteäsähkö
 {
-    margin-left: 30px;
+    
     font-family: roboto;
 }
 .laske{
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 28px;
 }
 .laske:hover{
@@ -57,4 +58,12 @@ body, html{
 }
 .laske:active{
     opacity: 0.9;
+}
+
+
+#tulos, #laskettu{
+    border: 2px;
+    font-size: 30px;
+    font-family: roboto;
+    text-align: center;
 }
