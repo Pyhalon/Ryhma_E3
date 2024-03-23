@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
+    
     <head>
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>  
+
         <meta name="viewport" content="width=device-width", initial-scale="1.0">
         <title>Vertaile kodinkoneiden sähkönkulutuksen hintoja helposti</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +17,8 @@
         <link rel = "stylesheet" href="styles/header.css">
         <link rel = "stylesheet" href="styles/main.css">
         <link rel = "stylesheet" href="styles/footer.css">
+        <script type="mpy" src="../backend/testi.py"></script>
         
-
     </head> 
 
     <body style="background-color: rgb(225, 225, 225);">
@@ -40,7 +44,7 @@
 
                                 <select id ="vetovalikko">
                                     <option value = "0">Valitse kodinkone</option>
-                                    <option value = "1">Hiustenkuivain</option>
+                                    <option value = "Hiustenkuivain">Hiustenkuivain</option>
                                     <option value = "2">Astianpesukone</option>
                                     <option value = "3">Pyykinpesukone</option>
                                     <option value = "4">Mikroaaltouuni</option>
@@ -56,12 +60,15 @@
                                 <input type ="number" id = "käyttöminuutit" placeholder="Syötä minuutit">
 
                             <div>
-                                <button class="laske">Laske</button>
+                                <button id="laske" class="laske" mpy-click="testifunktio">Laske</button>
+                                
                             </div>
+                            
                         </div>
                         <div id="oikea">
                             <div id ="laskettu" class="teksti">Valitsemasi kodikoneen käyttö maksaisi: </div>
-                            <div id = "tulos" class = "teksti">9,90€
+                            <div id = "tulos" class = "teksti"> 
+                                
                                 
                             </div>
                             
