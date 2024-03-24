@@ -2,18 +2,20 @@
 from datetime import datetime
 from pyscript import display, window, document
 
-#from pyscript import when, display
-
-#@when("click", "#laske")
 def testifunktio(event):
+    tehot = [1.5, 1.8, 1.7, 1.0, 0.16, 1.2]
 
     # vastaa input()
-    kodinkonevalitsija = document.querySelector("#vetovalikko").value
-    tunnit = document.querySelector("#käyttötunnit").value
+    kodinkonevalitsija = int(document.querySelector("#vetovalikko").value)
+    tuntihinta = float(document.querySelector("#nykyinenhinta").innerText)
+    tunnit = float(document.querySelector("#käyttötunnit").value)
     window.console.log(tunnit)
-    minuutit = document.querySelector("#käyttöminuutit").value
+    minuutit = float(document.querySelector("#käyttöminuutit").value)
+    
     # vastaa print()
-    document.querySelector("#tulos").innerText = kodinkonevalitsija +  " " + tunnit + " tuntia " + minuutit + " minuuttia  maksaisi"
+    window.console.log(kodinkonevalitsija, tuntihinta, tunnit, minuutit, tehot[kodinkonevalitsija])
+    hinta = tuntihinta * (tunnit+minuutit/60) * tehot[kodinkonevalitsija]
+    document.querySelector("#tulos").innerText = "{:.2f} €".format(hinta / 100)
 
     window.console.log("nappia painettu!")
-    
+   

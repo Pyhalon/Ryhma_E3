@@ -18,10 +18,27 @@
         <link rel = "stylesheet" href="styles/main.css">
         <link rel = "stylesheet" href="styles/footer.css">
         <script type="mpy" src="../backend/testi.py"></script>
-        
+
+        <script type="text/javascript">
+            async function hae_hinta() {
+                const date = new Date();
+                const yyyy = date.getFullYear();
+                var mm = date.getMonth()+1;
+                var dd = date.getDate()+1;
+                const hh = date.getHours();
+
+                if (mm < 10) {mm = `0${mm}`}
+                if (dd < 10) {dd = `0${dd}`}
+                
+                const response = await fetch(`http://localhost:3001/api/price/${yyyy}-${mm}-${dd}/${hh}`, { mode: 'cors' });
+                const price = await response.json();
+                document.getElementById("nykyinenhinta").innerHTML = price;
+            }
+        </script>
+
     </head> 
 
-    <body style="background-color: rgb(225, 225, 225);">
+    <body style="background-color: rgb(225, 225, 225);" onload ="hae_hinta()">
         <div class = "header">
             <div class="name">Wattimestari</div>
             <div class = "linkki">
@@ -44,7 +61,7 @@
 
                                 <select id ="vetovalikko">
                                     <option value = "0">Valitse kodinkone</option>
-                                    <option value = "Hiustenkuivain">Hiustenkuivain</option>
+                                    <option value = "1">Hiustenkuivain</option>
                                     <option value = "2">Astianpesukone</option>
                                     <option value = "3">Pyykinpesukone</option>
                                     <option value = "4">Mikroaaltouuni</option>
@@ -67,10 +84,7 @@
                         </div>
                         <div id="oikea">
                             <div id ="laskettu" class="teksti">Valitsemasi kodikoneen käyttö maksaisi: </div>
-                            <div id = "tulos" class = "teksti"> 
-                                
-                                
-                            </div>
+                            <div id = "tulos" class = "teksti"> </div>
                             
                         </div>
                     </div>
@@ -81,6 +95,8 @@
                     
 
         </div>
-        <div class ="footer"> Footer</div>
+        <div class ="footer"> Footer
+            <div id ="nykyinenhinta" style="color: black;"> k</div>
+        </div>
         
     </body>
