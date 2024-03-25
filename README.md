@@ -16,3 +16,4 @@
 - Lisää käyttötunti
 - Lisää minuutit
 - Paina laske
+- Toimii tällä hetkellä vain pörssisähkönhinnalla
