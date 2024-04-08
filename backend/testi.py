@@ -3,7 +3,7 @@ from datetime import datetime
 from pyscript import display, window, document
 
 def testifunktio(event):
-    tehot = [1.5, 1.8, 1.7, 1.0, 0.16, 1.2]
+    tehot = [0, 1.7, 1.8, 1.0, 1.2, 2.6, 0.05, 0.7, 1.1, 5.0, 0.16, 0.15, 0.3, 0.005, 0.08, 1.2, 1.5, 2.0, 1.0, 1.2, 0.6]
 
     # vastaa input()
     kodinkonevalitsija = int(document.querySelector("#vetovalikko").value)
