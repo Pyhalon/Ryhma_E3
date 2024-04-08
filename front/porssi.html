@@ -60,21 +60,35 @@
                             <div id="kodinkonevalitsija">
 
                                 <select id ="vetovalikko">
-                                    <option value = "0">Valitse kodinkone</option>
-                                    <option value = "1">Hiustenkuivain</option>
-                                    <option value = "2">Astianpesukone</option>
-                                    <option value = "3">Pyykinpesukone</option>
-                                    <option value = "4">Mikroaaltouuni</option>
-                                    <option value = "5">Televisio</option>
-                                    <option value = "6">Uuni</option>
+                            <option value = "0">Valitse kodinkone</option>
+                            <option value = "1">Pyykinpesukone</option>
+                            <option value = "2">Astianpesukone</option>
+                            <option value = "3">Mikroaaltouuni</option>
+                            <option value = "4">Uuni</option>
+                            <option value = "5">Induktioliesi</option>
+                            <option value = "6">Jääkaappipakasti</option>
+                            <option value = "7">Pölynimuriimuri</option>
+                            <option value = "8">Ilmastointi</option>
+                            <option value = "9">Sauna</option>
+                            <option value = "10">Televisio</option>
+                            <option value = "11">Videopeli konsoli</option>
+                            <option value = "12">Pöytätietokone</option>
+                            <option value = "13">LED lamppu</option>
+                            <option value = "14">Puhelimmen laturi</option>
+                            <option value = "15">Vedenkeitin</option>
+                            <option value = "16">Hiustenkuivain</option>
+                            <option value = "17">Silitysrauta</option>
+                            <option value = "18">Kuivausrumpu</option>
+                            <option value = "19">Leivänpaahdin</option>
+                            <option value = "20">Kahvinkeitin</option>
                                 </select>
                             </div>
 
                             <div id = "tunnit" class = "teksti">Kodinkoneen käyttötunnit:</div>
-                                <input type ="number" id = "käyttötunnit" placeholder="Syötä käyttötunnit">
+                                <input type ="number" id = "käyttötunnit" placeholder="Syötä käyttötunnit" min="0">
 
                             <div id = "minuutit" class = "teksti"> Kodinkoneen käyttöminuutit:</div>
-                                <input type ="number" id = "käyttöminuutit" placeholder="Syötä minuutit">
+                                <input type ="number" id = "käyttöminuutit" placeholder="Syötä minuutit" min="0">
 
                             <div>
                                 <button id="laske" class="laske" mpy-click="testifunktio">Laske</button>
@@ -83,7 +97,7 @@
                             
                         </div>
                         <div id="oikea">
-                            <div id ="laskettu" class="teksti">Valitsemasi kodikoneen käyttö maksaisi: </div>
+                            <div id ="laskettu" class="teksti">Valitsemasi kodinkoneen käyttö maksaisi: </div>
                             <div id = "tulos" class = "teksti"> </div>
                             
                         </div>
