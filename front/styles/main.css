@@ -44,10 +44,18 @@ body, html{
     
     font-family: roboto;
 }
+
+#käyttötunnit:invalid, #käyttöminuutit:invalid {
+    background-color:rgb(235, 145, 145)
+    
+
+}
+
 #pörssisähkö, #kiinteäsähkö
 {
     
     font-family: roboto;
+
 }
 .laske{
     margin-top: 20px;
@@ -66,4 +74,9 @@ body, html{
     font-size: 30px;
     font-family: roboto;
     text-align: center;
+}
+
+a:visited, a:link{
+    color: grey;
+
 }
