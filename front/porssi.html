@@ -1,116 +1,119 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
-        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>  
 
-        <meta name="viewport" content="width=device-width", initial-scale="1.0">
-        <title>Vertaile kodinkoneiden sähkönkulutuksen hintoja helposti</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anta&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel = "stylesheet" href="styles/header.css">
-        <link rel = "stylesheet" href="styles/main.css">
-        <link rel = "stylesheet" href="styles/footer.css">
-        <script type="mpy" src="../backend/testi.py"></script>
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <title>Vertaile kodinkoneiden sähkönkulutuksen hintoja helposti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
 
-        <script type="text/javascript">
-            async function hae_hinta() {
-                const date = new Date();
-                const yyyy = date.getFullYear();
-                var mm = date.getMonth()+1;
-                var dd = date.getDate()+1;
-                const hh = date.getHours();
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anta&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <script type="mpy" src="../backend/testi.py"></script>
 
-                if (mm < 10) {mm = `0${mm}`}
-                if (dd < 10) {dd = `0${dd}`}
-                
-                const response = await fetch(`http://localhost:3001/api/price/${yyyy}-${mm}-${dd}/${hh}`, { mode: 'cors' });
-                const price = await response.json();
-                document.getElementById("nykyinenhinta").innerHTML = price;
-            }
-        </script>
+    <script type="text/javascript">
+        async function hae_hinta() {
+            const date = new Date();
+            const yyyy = date.getFullYear();
+            var mm = date.getMonth() + 1;
+            var dd = date.getDate() + 1;
+            const hh = date.getHours();
 
-    </head> 
+            if (mm < 10) { mm = `0${mm}` }
+            if (dd < 10) { dd = `0${dd}` }
 
-    <body style="background-color: rgb(225, 225, 225);" onload ="hae_hinta()">
-        <div class = "header">
-            <div class="name">Wattimestari</div>
-            <div class = "linkki">
-                <a href ="https://www.porssisahkoa.fi/" target="_blank" id = "p-linkki">Pörssisähköä.fi</a>
-            </div> 
-            
+            const response = await fetch(`http://localhost:3001/api/price/${yyyy}-${mm}-${dd}/${hh}`, { mode: 'cors' });
+            const price = await response.json();
+            document.getElementById("nykyinenhinta").innerHTML = price;
+        }
+    </script>
+
+</head>
+
+<body style="background-color: rgb(225, 225, 225);" onload="hae_hinta()">
+    <div class="header">
+        <div class="name">Wattimestari</div>
+        <div class="linkki">
+            <a href="https://www.porssisahkoa.fi/" target="_blank" id="p-linkki">Pörssisähköä.fi</a>
         </div>
 
-            <div class ="background-image">
-                
-                <div class =" main-site">
-                    <div id = "otsikko" class = "teksti"> Tällä sivustolla voit laskea haluamasi kodinkoneen kulutuksen ajakohtaisella pörssisähkönhinnalla.</div>
-                    <div id = "laskuri" style="
+    </div>
+
+    <div class="background-image">
+
+        <div class=" main-site">
+            <div id="otsikko" class="teksti"> Tällä sivustolla voit laskea haluamasi kodinkoneen kulutuksen
+                ajakohtaisella pörssisähkönhinnalla.</div>
+            <div id="laskuri" style="
                     display: grid;
                     grid-template-columns: 1fr 1fr;">
-                        <div id ="vasen" style="text-align: center;">
-                            <div id = "kone" class = "teksti"> Valitse kodinkone: </div>
+                <div id="vasen" style="text-align: center;">
+                    <div id="kone" class="teksti"> Valitse kodinkone: </div>
 
-                            <div id="kodinkonevalitsija">
+                    <div id="kodinkonevalitsija">
 
-                                <select id ="vetovalikko">
-                                    <option value = "0">Valitse kodinkone</option>
-                                    <option value = "1">Pyykinpesukone</option>
-                                    <option value = "2">Astianpesukone</option>
-                                    <option value = "3">Mikroaaltouuni</option>
-                                    <option value = "4">Uuni</option>
-                                    <option value = "5">Induktioliesi</option>
-                                    <option value = "6">Jääkaappipakasti</option>
-                                    <option value = "7">Pölynimuriimuri</option>
-                                    <option value = "8">Ilmastointi</option>
-                                    <option value = "9">Sauna</option>
-                                    <option value = "10">Televisio</option>
-                                    <option value = "11">Pelikonsoli</option>
-                                    <option value = "12">Pöytätietokone</option>
-                                    <option value = "13">LED-lamppu</option>
-                                    <option value = "14">Puhelimen laturi</option>
-                                    <option value = "15">Vedenkeitin</option>
-                                    <option value = "16">Hiustenkuivain</option>
-                                    <option value = "17">Silitysrauta</option>
-                                    <option value = "18">Kuivausrumpu</option>
-                                    <option value = "19">Leivänpaahdin</option>
-                                    <option value = "20">Kahvinkeitin</option>
-                                </select>
-                            </div>
-
-                            <div id = "tunnit" class = "teksti">Kodinkoneen käyttötunnit:</div>
-                                <input type ="number" id = "käyttötunnit" placeholder="Syötä käyttötunnit" min="0" max = "24">
-
-                            <div id = "minuutit" class = "teksti"> Kodinkoneen käyttöminuutit:</div>
-                                <input type ="number" id = "käyttöminuutit" placeholder="Syötä minuutit" min="0" max = "59">
-
-                            <div>
-                                <button id="laske" class="laske" mpy-click="testifunktio">Laske</button>
-                                
-                            </div>
-                            
-                        </div>
-                        <div id="oikea">
-                            <div id ="laskettu" class="teksti">Valitsemasi kodinkoneen käyttö maksaisi: </div>
-                            <div id = "tulos" class = "teksti"> </div>
-                            
-                        </div>
+                        <select id="vetovalikko">
+                            <option value="0">Valitse kodinkone</option>
+                            <option value="1">Pyykinpesukone</option>
+                            <option value="2">Astianpesukone</option>
+                            <option value="3">Mikroaaltouuni</option>
+                            <option value="4">Uuni</option>
+                            <option value="5">Induktioliesi</option>
+                            <option value="6">Jääkaappipakasti</option>
+                            <option value="7">Pölynimuriimuri</option>
+                            <option value="8">Ilmastointi</option>
+                            <option value="9">Sauna</option>
+                            <option value="10">Televisio</option>
+                            <option value="11">Pelikonsoli</option>
+                            <option value="12">Pöytätietokone</option>
+                            <option value="13">LED-lamppu</option>
+                            <option value="14">Puhelimen laturi</option>
+                            <option value="15">Vedenkeitin</option>
+                            <option value="16">Hiustenkuivain</option>
+                            <option value="17">Silitysrauta</option>
+                            <option value="18">Kuivausrumpu</option>
+                            <option value="19">Leivänpaahdin</option>
+                            <option value="20">Kahvinkeitin</option>
+                        </select>
                     </div>
+
+                    <div id="tunnit" class="teksti">Kodinkoneen käyttötunnit:</div>
+                    <input type="number" id="käyttötunnit" placeholder="Syötä käyttötunnit" min="0" max="24">
+
+                    <div id="minuutit" class="teksti"> Kodinkoneen käyttöminuutit:</div>
+                    <input type="number" id="käyttöminuutit" placeholder="Syötä minuutit" min="0" max="59">
+
+                    <div>
+                        <button id="laske" class="laske" mpy-click="testifunktio">Laske</button>
+
                     </div>
-                        
+
                 </div>
-                
-                    
+                <div id="oikea">
+                    <div id="laskettu" class="teksti">Valitsemasi kodinkoneen käyttö maksaisi: </div>
+                    <div id="tulos" class="teksti"> </div>
 
+                </div>
+            </div>
         </div>
-        <div class ="footer"> Footer
-            <div id ="nykyinenhinta" style="color: black;"> k</div>
-        </div>
-        
-    </body>
+
+    </div>
+
+
+
+    </div>
+    <div class="footer"> Footer
+        <div id="nykyinenhinta" style="color: black;"> k</div>
+    </div>
+
+</body>
